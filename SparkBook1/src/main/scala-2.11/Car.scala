@@ -128,9 +128,33 @@ object intro{
     val ys3 = xs map {_ * 10.0}
     println(xs1, ys1, ys2,ys3)
 
-    //flatMap
+    //flatMap is similar to map. However generates a collection for each element in the original collection. URL: http://alvinalexander.com/scala/collection-scala-flatmap-examples-map-flatten
+    val line = "Scala is fun"
+    val SingleSpace = " "
+    val words = line.split(SingleSpace)
+    val arrayOfChars = words flatMap{_.toList}
+    println(words.length,arrayOfChars.length)//check if there is a way to display it
 
+    //filter
+    val xs2 = (1 to 100).toList
+    val even = xs2 filter {_ %2 == 0}
+    println(xs2,even)
 
+    //foreach
+    val words1 = "Scala is fun".split(" ")
+    words1.foreach(println)
+
+    //reduce is very useful
+    val t = List(2,4,6,8,10)
+    val sum = t reduce{(x,y) => x + y}
+    val product = t reduce{(x,y) => x * y}
+    val max = t reduce {(x,y) => if (x>y) x else y}
+    val min = t reduce {(x,y) => if (x<y) x else y}
+    println(sum,product, max, min)
+
+    val words2 = "Scala is fun".split(" ")
+    val longestWord = words reduce {(w1,w2) => if(w1.length > w2.length) w1 else w2}
+    println(longestWord)
 
   }
 }
