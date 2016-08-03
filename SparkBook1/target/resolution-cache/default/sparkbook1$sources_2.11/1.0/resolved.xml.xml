@@ -4,7 +4,7 @@
 		module="sparkbook1$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20160802150828"
+		publication="20160802230423"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
